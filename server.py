@@ -26,15 +26,12 @@ class Server(object):
 			print("Connection closed!")
 
 	def press_remote_key(self):
-		key, action = receive_key_action(self.client_socket)
+		key = receive_key_action(self.client_socket)
 		if key is None:
 			return
-		if action == ACTION_PRESS:
-			self.keyboard.press(key)
-			print("Pressed {}".format(key))
-		elif action == ACTION_RELEASE:
-			self.keyboard.release(key)
-			print("Released {}".format(key))
+		self.keyboard.press(key)
+		self.keyboard.release(key)
+		print("Pressed {}".format(key))
 
 
 if __name__ == '__main__':

@@ -11,11 +11,11 @@ LISTEN_KEYS = [
 	Key.down, 
 	Key.left, 
 	Key.right, 
-	Key.enter,
 	KeyCode.from_char('w'),
 	KeyCode.from_char('a'),
 	KeyCode.from_char('s'),
 	KeyCode.from_char('d'),
+	Key.enter,
 ]
 
 client_socket = None
